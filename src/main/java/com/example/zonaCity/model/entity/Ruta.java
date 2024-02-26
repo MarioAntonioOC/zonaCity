@@ -1,10 +1,6 @@
 package com.example.zonaCity.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Rutas")
@@ -12,9 +8,17 @@ public class Ruta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id",nullable = false)
+    private Integer id;
 
+    @Column(name = "nombre_ruta", nullable = false)
     private String nombreRuta;
+
+    @Override
+    public String toString() {
+        return "Ruta{id=" + id + ", nombreRuta='" + nombreRuta + "'}";
+    }
+
 
     // getters y setters
 }

@@ -13,7 +13,7 @@ public class Conductor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String nombre;
     private String apellido;
